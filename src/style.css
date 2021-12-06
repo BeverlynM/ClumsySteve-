@@ -1,108 +1,57 @@
-/* This is where you can make changes to the
-appearance of your different blocks.
+body {
+  background-color: #0099cc;
+  color: #fff;
 
-For info on CSS, copy and paste the link
-below into your browser!
+  /* Allow mouse dragging. */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 
-https://www.w3schools.com/css/default.asp
+  /* disable touch panning/zooming */
+  -ms-touch-action: none;
+  touch-action: none;
 
-*/
-
-/* float the service dock to the right */
-#servicedock {
-  float: right;
+  /* Allow canvas to hit the edges of the browser viewport. */
+  margin: 0;
 }
 
-.buttonBlock{
-    /*Give your button block some style!
-    Add color, change the border, and
-    change the size using CSS styling*/
-    background-color:lightblue;
-    border:solid;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 40px;
-    width:30%;
+#screen canvas {
+  margin: auto;
+  /* Hide the gap for font descenders. */
+  display: block;
+
+  /* disable scaling interpolation */
+  image-rendering: optimizeSpeed;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: optimize-contrast;
+  -ms-interpolation-mode: nearest-neighbor;
 }
 
-.sliderBlock{
-    /*Give your slider block some style!
-    Add color, change the border, and
-    change the size using CSS styling*/
-    background-color:orange;
-    border:solid;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 40px;
-    width:30%;
-}
-
-.textBlock{
-    /*Give your text block some style!
-    Add color, change the border, and
-    change the size using CSS styling*/
-    background-color:lightgreen;
-    border:solid;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 40px;
-    width:30%;
-}
-
-/* homepage styling */
-.table_links {
-  border: 1px solid black;
-  padding: 10px;
-}
-.remote {
-  border: 1px solid black;
-  vertical-align: middle;
+#share {
+  margin: 10px auto;
   text-align: center;
-  width: 200px;
-  height: 100px;
-  background-color: lightgreen;
-}
-.local {
-  border: 1px solid black;
-  vertical-align: middle;
-  text-align: center;
-  width: 200px;
-  height: 100px;
-  background-color: pink;
-}
-.documentation {
-  border: 1px solid black;
-  vertical-align: middle;
-  text-align: center;
-  width: 200px;
-  height: 100px;
-  background-color: lightyellow;
 }
 
-/* local styling for cloud interaction */
-.cloud_check {
-  padding: 5px;
-  background-color: lightyellow;
-}
-.cloud_table {
-  padding: 5px;
-}
-.cloud_table td {
-  padding: 5px;
-	vertical-align: top;
-}
-.cloud_active {
-	background-color: lightgreen;
-}
-.cloud_inactive {
-	background-color: none;
+#share .fb-share-button iframe {
+  margin-top: -4px;
 }
 
-/* documentation styles */
-.documentation_image {
-  border: 1px solid black;
+@font-face {
+  font-family: 'gamefont';
+  src: url('../data/css/gamefont.eot');
+  src: url('../data/css/gamefont.eot?#iefix') format('embedded-opentype'),
+     url('../data/css/gamefont.woff') format('woff'),
+     url('../data/css/gamefont.ttf') format('truetype'),
+     url('../data/css/gamefont.svg#gamefont') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
-.documentation_code {
-  padding: 5px;
-  background-color: lightyellow;
+
+.google {
+  position: absolute;
+  left:23%;
 }
