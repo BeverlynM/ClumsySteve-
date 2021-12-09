@@ -34,6 +34,8 @@
 		</ol>
 	</p>
 
+
+
   <h2>Local Interface</h2>
 
 	<div class="cloud_check">
@@ -45,9 +47,33 @@
 			<input type=text id="cloud_value" value="lose">
 			<input type=text id="cloud_action_val" value="0">
 <textarea id="cloud_code">from spike import PrimeHub
+    
 hub = PrimeHub()
+motor_pair = MotorPair('D', 'C')
 steps = CLOUD[steps]
-hub.light_matrix.write('Steps = ' + str(steps))
+hub.light_matrix.write('steps = ' + str(steps))
+if (steps < 2):
+    motor_pair.start_tank(0, -30)
+    hub.light_matrix.show_image('CONFUSED')
+elif (steps < 3):
+    motor_pair.start_tank(-30, 0)
+    hub.light_matrix.show_image('SAD')
+elif (steps < 4):
+    motor_pair.start_tank(30, -30)
+    hub.light_matrix.show_image('MEH')
+elif (steps < 6):
+    motor_pair.start_tank(-30, 30)
+    hub.light_matrix.show_image('SURPRISED')
+elif (steps < 8):
+    motor_pair.start_tank(40, -40)
+    hub.light_matrix.show_image('SILLY')
+elif (steps < 9):
+    motor_pair.start_tank(30, -30)
+    hub.light_matrix.show_image('XMAS')
+else:
+    motor_pair.start_tank(30, -30)
+    hub.light_matrix.show_image('HAPPY')
+
 </textarea>
 			<input type=text id="cloud_reset" value="">
 		</div>
