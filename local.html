@@ -51,7 +51,6 @@
 hub = PrimeHub()
 motor_pair = MotorPair('D', 'C')
 steps = CLOUD[steps]
-hub.light_matrix.write('steps = ' + str(steps))
 if (steps < 2):
     motor_pair.start_tank(0, -30)
     hub.light_matrix.show_image('CONFUSED')
