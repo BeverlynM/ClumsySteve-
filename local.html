@@ -52,10 +52,10 @@ hub = PrimeHub()
 motor_pair = MotorPair('D', 'C')
 steps = CLOUD[steps]
 if (steps < 2):
-    motor_pair.start_tank(0, -30)
+    motor_pair.start_tank(30, -30)
     hub.light_matrix.show_image('CONFUSED')
 elif (steps < 3):
-    motor_pair.start_tank(-30, 0)
+    motor_pair.start_tank(-30, 30)
     hub.light_matrix.show_image('SAD')
 elif (steps < 4):
     motor_pair.start_tank(30, -30)
